@@ -31,7 +31,7 @@ npm install vortexjs-engine
 
 Пример: плавное появление элемента  
 ```javascript
-import vortex from 'vortexjs';
+import vortex from 'vortexjs-engine';
 
 vortex.animate({
   targets: '.my-element',
