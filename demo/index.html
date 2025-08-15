@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VortexJS Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <h1 class="hero-title">VortexJS</h1>
+    <p class="hero-subtitle">Мощная библиотека анимаций для современного веба</p>
+    <div class="hero-particles"></div>
+  </header>
+
+  <section class="demo-section" id="basic-animations">
+    <h2>Базовые анимации</h2>
+    <div class="demo-grid">
+      <div class="demo-box" id="fade-box"></div>
+      <div class="demo-box" id="move-box"></div>
+      <div class="demo-box" id="scale-box"></div>
+    </div>
+  </section>
+
+  <section class="demo-section" id="timeline-demo">
+    <h2>Временные линии</h2>
+    <div class="timeline-container">
+      <div class="timeline-box" id="timeline-box1"></div>
+      <div class="timeline-box" id="timeline-box2"></div>
+      <div class="timeline-box" id="timeline-box3"></div>
+    </div>
+    <button id="timeline-button">Запустить анимацию</button>
+  </section>
+
+  <section class="demo-section" id="physics-demo">
+    <h2>Физические анимации</h2>
+    <div class="physics-container">
+      <div class="physics-ball" id="physics-ball"></div>
+    </div>
+    <button id="physics-button">Бросить мяч</button>
+  </section>
+
+  <section class="demo-section" id="svg-demo">
+    <h2>SVG анимации</h2>
+    <svg viewBox="0 0 100 100" class="svg-demo">
+      <path d="M10 10 L90 10 L90 90 L10 90 Z" fill="none" stroke="#3498db" stroke-width="2"></path>
+    </svg>
+    <button id="svg-morph-button">Морфинг</button>
+    <button id="svg-draw-button">Рисование</button>
+  </section>
+
+  <section class="demo-section" id="text-demo">
+    <h2>Анимация текста</h2>
+    <div class="text-container">
+      <p id="typewriter-text">VortexJS делает анимации текста простыми и эффектными!</p>
+      <p id="scramble-text">Скремблирование текста для драматического эффекта</p>
+    </div>
+    <button id="typewriter-button">Печатная машинка</button>
+    <button id="scramble-button">Скремблирование</button>
+  </section>
+
+  <footer class="footer">
+    <p>© 2023 VortexJS. Все права защищены.</p>
+  </footer>
+
+  <script src="../dist/vortex.min.js"></script>
+  <script src="js/demo.js"></script>
+</body>
+</html>

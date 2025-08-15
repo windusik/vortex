@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Particle System - VortexJS</title>
+  <script src="../../../dist/vortex.min.js"></script>
+  <style>
+    body { margin: 0; overflow: hidden; }
+    canvas { display: block; }
+    .controls {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 100;
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <button id="fire">Fire</button>
+    <button id="rain">Rain</button>
+    <button id="reset">Reset</button>
+  </div>
+  <canvas id="canvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Setup canvas
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    // Create particle system
+    const particles = Vortex.particles({
+      maxParticles: 1000,
+      gravity: { x: 0, y: 0.1 }
+    });
+    
+    // Add emitters
+    const fireEmitter = {
+      x: canvas.width/2,
+      y: canvas.height,
+      rate: 20,
+      emit: () => ({
+        x: canvas.width/2 + Math.random() * 20 - 10,
+        y: canvas.height - 10,
+        vx: Math.random() * 6 - 3,
+        vy: -5 - Math.random() * 10,
+        life: 2 + Math.random() * 3,
+        size: 3 + Math.random() * 7,
+        color: `hsl(${20 + Math.random() * 40}, 100%, 50%)`
+      })
+    };
+    
+    const rainEmitter = {
+      x: 0,
+      y: 0,
+      rate: 50,
+      emit: () => ({
+        x: Math.random() * canvas.width,
+        y: -10,
+        vx: Math.random() * 2 - 1,
+        vy: 5 + Math.random() * 10,
+        life: 5 + Math.random() * 5,
+        size: 1 + Math.random() * 3,
+        color: `hsl(200, 80%, 60%)`
+      })
+    };
+    
+    // Animation loop
+    Vortex.animate({
+      update: (delta) => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.update(delta / 1000);
+        particles.render(ctx);
+      }
+    });
+    
+    // Controls
+    document.getElementById('fire').addEventListener('click', () => {
+      particles.clear();
+      particles.addEmitter(fireEmitter);
+    });
+    
+    document.getElementById('rain').addEventListener('click', () => {
+      particles.clear();
+      particles.addEmitter(rainEmitter);
+    });
+    
+    document.getElementById('reset').addEventListener('click', () => {
+      particles.clear();
+    });
+  </script>
+</body>
+</html>
