@@ -26,7 +26,7 @@ VortexJS — это современная библиотека анимаций
 ```bash
 npm install vortexjs-engine
 # или через CDN
-<script src="https://cdn.jsdelivr.net/npm/vortexjs@latest/dist/vortex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vortexjs-engine@latest/dist/vortex.min.js"></script>
 ```
 
 Пример: плавное появление элемента  
