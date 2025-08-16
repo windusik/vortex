@@ -6,9 +6,9 @@
 
 🚀 **Быстро. Гибко. Эффектно.**  
 
-[![npm version](https://img.shields.io/npm/v/vortexjs.svg?color=blue)](https://www.npmjs.com/package/vortexjs)
+[![npm version](https://img.shields.io/npm/v/vortexjs-engine.svg?color=blue)](https://www.npmjs.com/package/vortexjs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
-[![Github Stars](https://img.shields.io/github/stars/username/vortexjs?style=social)](https://github.com/username/vortexjs)  
+[![Github Stars](https://img.shields.io/github/stars/username/vortexjs?style=social)](https://github.com/windusik/vortex)  
 
 VortexJS — это современная библиотека анимаций, которая превращает ваши статичные интерфейсы в динамичные, живые и захватывающие впечатления.  
 
